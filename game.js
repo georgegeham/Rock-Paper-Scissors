@@ -22,12 +22,18 @@ function play(move) {
     const computermove = Object.keys(game)[Math.floor(Math.random() * 10 % 3)];
     console.log(move);
     console.log(game[computermove]['loses']);
-    if (move === game[computermove]['loses'])
+    if (move === game[computermove]['loses']) {
         result.wins++;
-    else if (move === computermove)
+        gamePlay(move, computermove, "Win.");
+    }
+    else if (move === computermove) {
         result.ties++;
-    else
+        gamePlay(move, computermove, "Tie.");
+    }
+    else {
         result.loses++;
+        gamePlay(move, computermove, "Lose.")
+    }
     displayResult();
     save();
 }
@@ -72,4 +78,10 @@ function autoplay() {
 document.querySelector(".autoPlay").addEventListener('click', () => {
     autoplay();
 });
+function gamePlay(move, computermove, result) {
+    document.querySelector('.gameplay').innerHTML = `<h3>${result}</h3>
+    <p> You <img class= "inline" src="image/${move}-emoji.png"> <img class= "inline" src="image/${computermove}-emoji.png">
+     Computer 
+    `
+}
 listen();

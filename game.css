@@ -42,3 +42,23 @@ button {
     margin-bottom: 20px;
     font-size: 20px;
 }
+
+.gameplay {
+    margin-bottom: 30px;
+}
+
+.gameplay h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.gameplay p {
+    font-size: 18px;
+    display: flex;
+    align-items: end;
+}
+
+.inline {
+    width: 40px;
+    margin: 0px 5px;
+}
