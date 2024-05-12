@@ -51,15 +51,22 @@ function displayResult() {
 function save() {
     localStorage.setItem('result', JSON.stringify(result));
 }
-function reset() {
-    result.wins = 0;
-    result.loses = 0;
-    result.ties = 0;
-    displayResult();
-    save();
+function clear() {
+    document.querySelector('.alert').innerHTML = `
+        <p> Are you sure you want to reset the score <button class = "yes">Yes</button><button class="no">No</button></p>
+    `
+    document.querySelector('.yes').addEventListener('click', () => {
+        result.wins = 0;
+        result.loses = 0;
+        result.ties = 0;
+        displayResult();
+        save();
+        document.querySelector('.alert').innerHTML = '';
+    })
+    document.querySelector('.no').addEventListener('click', () => { document.querySelector('.alert').innerHTML = '' })
 }
 document.querySelector(".reset").addEventListener('click', () => {
-    reset();
+    clear();
 })
 let isauto = false;
 let key;
@@ -91,6 +98,6 @@ document.addEventListener("keydown", e => {
     if (e.key === 'a')
         autoplay();
     if (e.key === " ")
-        reset();
+        clear();
 })
 listen();

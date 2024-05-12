@@ -62,3 +62,7 @@ button {
     width: 40px;
     margin: 0px 5px;
 }
+
+.alert {
+    font-size: 17px;
+}
