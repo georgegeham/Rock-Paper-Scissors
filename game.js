@@ -55,7 +55,6 @@ document.querySelector(".reset").addEventListener('click', () => {
 let isauto = false;
 let key;
 function autoplay() {
-    console.log(isauto);
     if (!isauto) {
         isauto = true;
         key = setInterval(() => {
@@ -71,7 +70,6 @@ function autoplay() {
     }
 }
 document.querySelector(".autoPlay").addEventListener('click', () => {
-    console.log("Pressed");
     autoplay();
 });
 listen();
