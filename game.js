@@ -51,12 +51,15 @@ function displayResult() {
 function save() {
     localStorage.setItem('result', JSON.stringify(result));
 }
-document.querySelector(".reset").addEventListener('click', () => {
+function reset() {
     result.wins = 0;
     result.loses = 0;
     result.ties = 0;
     displayResult();
     save();
+}
+document.querySelector(".reset").addEventListener('click', () => {
+    reset();
 })
 let isauto = false;
 let key;
@@ -84,4 +87,10 @@ function gamePlay(move, computermove, result) {
      Computer 
     `
 }
+document.addEventListener("keydown", e => {
+    if (e.key === 'a')
+        autoplay();
+    if (e.key === " ")
+        reset();
+})
 listen();
