@@ -2,3 +2,37 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    color: white;
+    background-color: rgb(25, 25, 25);
+    margin-left: 5px;
+}
+
+.header {
+    margin: 20px 0;
+}
+
+.icons {
+    display: flex;
+    column-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 130px;
+    height: 130px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 25px;
+}
+
+.icon img {
+    width: 70%;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+}
